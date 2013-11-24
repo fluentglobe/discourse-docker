@@ -9,6 +9,9 @@ export DISCOURSE_HOST="hello.fluentglobe.com"
 # Docker will use the same port number on the host for nginx to use.
 export DISCOURSE_PORT=3000
 
+export OUR_HOST="our.fluentglobe.com"
+export OUR_PORT=8000
+
 # Frontend (nginx) port of Discourse site
 export NGINX_PORT=80
 

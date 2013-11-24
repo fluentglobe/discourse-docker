@@ -10,3 +10,6 @@ echo "Discourse is running at,"
 echo "  http://${DISCOURSE_HOST}"
 echo "  http://$HOSTIP:$PORT/"
 
+echo "Django is running at,"
+echo "  http://${OUR_HOST}"
+echo "  http://$HOSTIP:$PORT/"

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -e
+. etc/env
+
+source bin/postgresql-info
+source bin/redis-info
+
+START_OUR="sudo docker run \
+     -e REDIS_PROVIDER_URL=$REDIS_PROVIDER_URL \
+     -e POSTGRES_HOST=$HOSTIP -e POSTGRES_PORT=$POSTGRES_PORT \
+     -e POSTMARK_API_KEY=$POSTMARK_API_KEY \
+     -e OUR_HOST=$OUR_HOST \
+     -v $(pwd)/data/our-public:/our/public"
+
+if [ "$1" = "web" ]; then
+    # TODO: use random port on host, and change nginx-start
+    # accordingly.
+    START_OUR="$START_OUR -p :8000"
+fi
+
+set -x
+exec $START_OUR fluentglobe/our $@
