@@ -1,13 +1,13 @@
 #!/bin/bash
 # -*- sh -*-
 
-CONF=/etc/nginx/conf.d/discourse.conf
+CONF=/etc/nginx/sites-enabled/discourse.conf
 
 sed -i s/\$SITE_HOST/$SITE_HOST/ $CONF
 sed -i s/\$SITE_PORT/$SITE_PORT/ $CONF
 sed -i s/\$SITE_NAME/$SITE_NAME/ $CONF
 
-CONF=/etc/nginx/conf.d/our.conf
+CONF=/etc/nginx/sites-enabled/our.conf
 
 sed -i s/\$SITE_HOST/$SITE_HOST/ $CONF
 sed -i s/\$SITE_PORT/$SITE_PORT/ $CONF
