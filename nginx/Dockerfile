@@ -10,7 +10,7 @@ RUN echo "deb-src http://nginx.org/packages/ubuntu/ precise nginx" >> /etc/apt/s
 RUN apt-get -qy install curl
 RUN curl http://nginx.org/keys/nginx_signing.key | apt-key add -
 RUN apt-get update
-RUN apt-get -qy install nginx
+RUN apt-get -qy install nginx-extras
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
@@ -18,6 +18,7 @@ ADD start /
 RUN chmod +x /start
 
 ADD discourse.conf /etc/nginx/conf.d/
+ADD our.conf /etc/nginx/conf.d/
 RUN mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf.disabled
 
 EXPOSE 80
