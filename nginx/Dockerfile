@@ -1,6 +1,6 @@
 # -*- sh -*-
 
-FROM ubuntu:12.04
+FROM ubuntu:12.10
 
 # prevent apt from starting nginx right after the installation
 RUN	echo "#!/bin/sh\nexit 101" > /usr/sbin/policy-rc.d; chmod +x /usr/sbin/policy-rc.d
@@ -17,9 +17,9 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 ADD start /
 RUN chmod +x /start
 
-ADD discourse.conf /etc/nginx/conf.d/
-ADD our.conf /etc/nginx/conf.d/
-RUN mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf.disabled
+ADD nginx.conf /etc/nginx/
+ADD discourse.conf /etc/nginx/sites-enabled/
+ADD our.conf /etc/nginx/sites-enabled/
 
 EXPOSE 80
 CMD /start
