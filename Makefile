@@ -6,11 +6,16 @@ build:
 	sudo docker build -t "fluentglobe/postgresql:9.1" postgresql
 	sudo docker build -t "fluentglobe/redis:2.6" redis
 	sudo docker build -t "fluentglobe/nginx" nginx
+	sudo docker build -t "fluentglobe/our" our
 	sudo docker images | grep fluentglobe
 
 run-nginx:
 	docker run -i -e SITE_PORT=3000 -e SITE_HOST=146.185.169.23 -e SITE_NAME=hello.fluentglobe.com -p 80:80 -v /root/fluentglobe-docker/data/discourse-public:/discourse-public -t fluentglobe/nginx /bin/bash
-	
+
+nginx-image:
+	sudo docker build -t fluentglobe/nginx nginx
+	sudo docker images | grep fluentglobe/nginx
+
 discourse-image:
 	sudo docker build -t fluentglobe/discourse discourse
 	sudo docker images | grep fluentglobe/discourse
@@ -20,14 +25,14 @@ pull:
 	sudo docker pull fluentglobe/redis
 	sudo docker pull fluentglobe/postgresql
 	sudo docker pull fluentglobe/discourse
-	sudo docker pull fluentglobe/weblate
+	sudo docker pull fluentglobe/our
 
 push:
 	sudo docker push fluentglobe/discourse-nginx
 	sudo docker push fluentglobe/redis
 	sudo docker push fluentglobe/postgresql
 	sudo docker push fluentglobe/discourse
-	sudo docker push fluentglobe/weblate
+	sudo docker push fluentglobe/our
 
 ps:
 	sudo docker ps 

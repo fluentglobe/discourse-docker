@@ -40,11 +40,16 @@ echo 'export DISCOURSE_HOST=mysite.com:5000' > .env
 # OPTIONAL: email support via postmarkapp.com.
 # later, add the 'From' address to Discourse admin settings.
 echo 'export POSTMARK_API_KEY=<apikey>' >> .env
+```
 
-# Start supervisor on a separate terminal window. This will
-# automatically start the redis and postgresql containers.
-make supervisor
+Start supervisor on a separate terminal window. This will
+automatically start the redis and postgresql containers.
 
+    make supervisor &
+
+This will kill the dockers if you press Ctrl-C
+
+```
 # Verify that redis-server and postgres are running.
 # Note: bin/sup is alias to `sudo supervisorctl`.
 bin/sup status
