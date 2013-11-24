@@ -4,7 +4,7 @@
 set -e
 . etc/env
 
-ID=$(sudo docker ps | grep srid/postgresql:9.1 | awk '{print $1}')
+ID=$(sudo docker ps | grep fluentglobe/postgresql:9.1 | awk '{print $1}')
 
 export POSTGRES_HOST=$HOSTIP
 export POSTGRES_PORT=$(sudo docker port $ID 5432)

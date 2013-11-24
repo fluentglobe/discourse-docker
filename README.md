@@ -28,7 +28,7 @@ sudo pip install supervisor
 
 git clone git@github.com:fluentglobe/fluentglobe-docker.git
 
-git clone https://github.com/srid/discourse-docker.git
+git clone https://github.com/fluentglobe/fluentglobe-docker.git
 cd discourse-docker
 
 # Pull the docker images (expect this to download a few megabytes)

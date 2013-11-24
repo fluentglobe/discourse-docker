@@ -2,27 +2,29 @@ all:
 	echo
 
 build:
-	sudo docker build -t srid/discourse discourse
-	sudo docker build -t "srid/postgresql:9.1" postgresql
-	sudo docker build -t "srid/redis:2.6" redis
-	sudo docker build -t "srid/discourse-nginx:1.3" nginx
-	sudo docker images | grep srid
+	sudo docker build -t fluentglobe/discourse discourse
+	sudo docker build -t "fluentglobe/postgresql:9.1" postgresql
+	sudo docker build -t "fluentglobe/redis:2.6" redis
+	sudo docker build -t "fluentglobe/nginx" nginx
+	sudo docker images | grep fluentglobe
 
 discourse-image:
-	sudo docker build -t srid/discourse discourse
-	sudo docker images | grep srid/discourse
+	sudo docker build -t fluentglobe/discourse discourse
+	sudo docker images | grep fluentglobe/discourse
 
 pull:
-	sudo docker pull srid/discourse-nginx
-	sudo docker pull srid/redis
-	sudo docker pull srid/postgresql
-	sudo docker pull srid/discourse
+	sudo docker pull fluentglobe/nginx
+	sudo docker pull fluentglobe/redis
+	sudo docker pull fluentglobe/postgresql
+	sudo docker pull fluentglobe/discourse
+	sudo docker pull fluentglobe/weblate
 
 push:
-	sudo docker push srid/discourse-nginx
-	sudo docker push srid/redis
-	sudo docker push srid/postgresql
-	sudo docker push srid/discourse
+	sudo docker push fluentglobe/discourse-nginx
+	sudo docker push fluentglobe/redis
+	sudo docker push fluentglobe/postgresql
+	sudo docker push fluentglobe/discourse
+	sudo docker push fluentglobe/weblate
 
 ps:
 	sudo docker ps 

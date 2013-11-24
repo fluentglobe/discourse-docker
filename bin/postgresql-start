@@ -6,4 +6,4 @@ set -e
 set -x
 exec sudo docker run \
     -v $(pwd)/data/postgres:/var/lib/postgresql \
-    srid/postgresql:9.1
+    fluentglobe/postgresql:9.1

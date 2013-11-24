@@ -4,4 +4,4 @@ set -e
 . etc/env
 
 set -x
-exec sudo docker run srid/redis:2.6
+exec sudo docker run fluentglobe/redis:2.6

@@ -20,4 +20,4 @@ if [ "$1" = "web" ]; then
 fi
 
 set -x
-exec $START_DISCOURSE srid/discourse $@
+exec $START_DISCOURSE fluentglobe/discourse $@

@@ -82,7 +82,7 @@ No command specified. Valid commands include:
   * sidekiq: Run the sidekiq worker
   * setup: Run the one-time Discourse setup
 
-See https://github.com/srid/discourse-docker for details.
+See https://github.com/fluentglobe/fluentglobe-docker for details.
 EOF
 else
     run_cmd $@

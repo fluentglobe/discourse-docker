@@ -3,7 +3,7 @@
 # forked from https://gist.github.com/jpetazzo/5494158
 
 FROM	ubuntu:12.04
-MAINTAINER	srid
+MAINTAINER	fluentglobe
 
 EXPOSE 5432
 CMD /start postgres

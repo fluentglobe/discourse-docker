@@ -3,7 +3,7 @@
 # Base image for all Discourse related processes.
 
 FROM ubuntu:12.04
-MAINTAINER srid
+MAINTAINER fluentglobe
 
 ENV DISCOURSE_VERSION 0.9.6.3
 ENV RAILS_ENV production
