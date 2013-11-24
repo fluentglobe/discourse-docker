@@ -12,12 +12,13 @@ RUN curl http://nginx.org/keys/nginx_signing.key | apt-key add -
 RUN apt-get update
 RUN apt-get -qy install nginx-extras
 
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+# RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 ADD start /
 RUN chmod +x /start
 
 ADD nginx.conf /etc/nginx/
+ADD default.conf /etc/nginx/sites-enabled/
 ADD discourse.conf /etc/nginx/sites-enabled/
 ADD our.conf /etc/nginx/sites-enabled/
 
