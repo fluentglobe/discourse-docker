@@ -26,6 +26,8 @@ apt-get install postgresql-client
 sudo apt-get install python-pip
 sudo pip install supervisor
 
+git clone git@github.com:fluentglobe/fluentglobe-docker.git
+
 git clone https://github.com/srid/discourse-docker.git
 cd discourse-docker
 
