@@ -25,7 +25,9 @@ ADD discourse.conf /etc/nginx/sites-enabled/
 ADD our.conf /etc/nginx/sites-enabled/
 ADD set-env /usr/local/bin/
 RUN chmod +x /usr/local/bin/set-env
+RUN set-env
 
 EXPOSE 80
-CMD /start
+#CMD /start
+CMD nginx
 
