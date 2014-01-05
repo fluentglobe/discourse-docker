@@ -5,12 +5,14 @@ CONF=/etc/nginx/sites-enabled/discourse.conf
 
 sed -i s/\$HOSTIP/$HOSTIP/ $CONF
 sed -i s/\$SITE_PORT/$DISCOURSE_PORT/ $CONF
+sed -i s/\$SITE_HOST/$DISCOURSE_HOST/ $CONF
 sed -i s/\$SITE_NAME/$DISCOURSE_HOST/ $CONF
 
 CONF=/etc/nginx/sites-enabled/our.conf
 
 sed -i s/\$HOSTIP/$HOSTIP/ $CONF
 sed -i s/\$SITE_PORT/$OUR_PORT/ $CONF
+sed -i s/\$SITE_HOST/$OUR_HOST/ $CONF
 sed -i s/\$SITE_NAME/$OUR_HOST/ $CONF
 
 exec nginx
