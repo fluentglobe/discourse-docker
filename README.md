@@ -94,3 +94,13 @@ To migrate from an existing Discourse forum:
 3. Import public/uploads directory into data/discourse-public/uploads
 
 4. Start everything: bin/sup start all
+
+
+Issues
+------
+
+If you see the following run `supervisord`
+
+root@a:~/fluentglobe-docker# bin/sup start nginx
+unix:///tmp/supervisord-docker.sock no such file
+
