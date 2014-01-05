@@ -11,5 +11,5 @@ CONF=/etc/nginx/sites-enabled/our.conf
 
 sed -i s/\$HOSTIP/$HOSTIP/ $CONF
 sed -i s/\$SITE_PORT/$OUR_PORT/ $CONF
-sed -i s/\$SITE_NAME/$SITE_NAME/ $CONF
+sed -i s/\$SITE_NAME/$OUR_HOST/ $CONF
 
