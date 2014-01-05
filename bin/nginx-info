@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+set -o pipefail
 . etc/env
 
 ID=$(sudo docker ps | grep fluentglobe/nginx | awk '{print $1}')

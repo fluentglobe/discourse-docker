@@ -2,6 +2,7 @@
 # Display $REDIS_URL for running fluentglobe/redis
 
 set -e
+set -o pipefail
 . etc/env
 
 ID=$(sudo docker ps | grep fluentglobe/redis:2.6 | awk '{print $1}')
