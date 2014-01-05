@@ -3,9 +3,9 @@ all:
 
 build:
 	sudo docker build -t fluentglobe/discourse discourse
-	sudo docker build -t "fluentglobe/postgresql:9.1" postgresql
-	sudo docker build -t "fluentglobe/redis:2.6" redis
-	sudo docker build -t "fluentglobe/nginx" nginx
+	sudo docker build -rm -t "fluentglobe/postgresql:9.1" postgresql
+	sudo docker build -rm -t "fluentglobe/redis:2.6" redis
+	sudo docker build -rm -t "fluentglobe/nginx" nginx
 	sudo docker build -t "fluentglobe/our" our
 	sudo docker images | grep fluentglobe
 
@@ -16,7 +16,7 @@ nginx-image:
 	sudo docker build -t fluentglobe/nginx nginx
 	sudo docker images | grep fluentglobe/nginx
 
-discourse-image:
+build-discourse-only:
 	sudo docker build -t fluentglobe/discourse discourse
 	sudo docker images | grep fluentglobe/discourse
 
