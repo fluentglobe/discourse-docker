@@ -2,6 +2,7 @@ all:
 	echo
 
 build:
+	sudo docker build -t fluentglobe/base base
 	sudo docker build -t fluentglobe/discourse discourse
 	sudo docker build -rm -t "fluentglobe/postgresql:9.1" postgresql
 	sudo docker build -rm -t "fluentglobe/redis:2.6" redis
