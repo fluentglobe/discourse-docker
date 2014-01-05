@@ -5,5 +5,7 @@ set -e
 
 set -x
 exec sudo docker run \
+	-name=fluent-postgresql \
+	-p 5432 \
     -v $(pwd)/data/postgres:/var/lib/postgresql \
     fluentglobe/postgresql:9.1

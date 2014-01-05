@@ -7,6 +7,7 @@ set -x
 # Assign static port (NGINX_PORT) for nginx front so that it can be
 # reliably used in the frontend's config file.
 exec sudo docker run \
+	-name=fluent-nginx \
     -e SITE_PORT=$DISCOURSE_PORT \
     -e SITE_HOST=$HOSTIP \
     -e SITE_NAME=$DISCOURSE_HOST \

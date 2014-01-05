@@ -7,6 +7,7 @@ source bin/postgresql-info
 source bin/redis-info
 
 START_DISCOURSE="sudo docker run \
+	 -name=fluent-discourse \
      -e REDIS_PROVIDER_URL=$REDIS_PROVIDER_URL \
      -e POSTGRES_HOST=$HOSTIP -e POSTGRES_PORT=$POSTGRES_PORT \
      -e POSTMARK_API_KEY=$POSTMARK_API_KEY \
