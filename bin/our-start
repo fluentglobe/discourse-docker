@@ -12,7 +12,7 @@ START_OUR="sudo docker run \
      -e POSTMARK_API_KEY=$POSTMARK_API_KEY \
      -e OUR_HOST=$OUR_HOST \
      -p 22222:22 \
-     -p 8000
+     -p 8000 \
      -v $(pwd)/data/our-public:/our/public"
 
 if [ "$1" = "web" ]; then
