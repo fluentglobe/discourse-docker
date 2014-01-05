@@ -23,6 +23,14 @@ ADD nginx.conf /etc/nginx/
 ADD default.conf /etc/nginx/sites-enabled/
 ADD discourse.conf /etc/nginx/sites-enabled/
 ADD our.conf /etc/nginx/sites-enabled/
+
+#TODO HOSTIP = $HOSTIP
+
+ENV OUR_HOST = our.fluentglobe.com
+ENV DISCOURSE_HOST = hello.fluentglobe.com
+ENV OUR_PORT = 8000
+ENV DISCOURSE_PORT = 3000
+
 ADD set-env /usr/local/bin/
 RUN chmod +x /usr/local/bin/set-env
 RUN set-env

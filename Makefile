@@ -10,9 +10,9 @@ build:
 	sudo docker images | grep fluentglobe
 
 run-nginx:
+	. etc/env
 	docker run -i \
-		-e DISCOURSE_PORT=3000 -e HOSTIP=146.185.169.23 -e DISCOURSE_HOST=hello.fluentglobe.com \
-		-e OUR_PORT=8000 -e OUR_HOST=our.fluentglobe.com \
+		-e HOSTIP=146.185.169.23 \
 		-p 80:80 -v /root/fluentglobe-docker/data/discourse-public:/discourse-public \
 		-v /root/fluentglobe-docker/data/our-public:/our-public \
 		-v /var/log/nginx:/var/log/nginx \
