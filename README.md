@@ -60,7 +60,7 @@ bin/sup status
 # data/discourse-public.
 bin/discourse-start setup
 
-# Finally, start discourse, sidekiq and nginx
+# Finally, start discourse, django, sidekiq and nginx
 bin/sup start discourse sidekiq nginx
 
 # Discourse is now running; launch the discourse site URL.
@@ -69,6 +69,13 @@ make info
 # After signing up for an account, make yourself an admin:
 bin/make-admin myusername
 ```
+
+Where's the Stuff
+-----------------
+
+In `data` you find the data for the running dockers
+
+In `tmp` you find the logs
 
 Migration
 ---------
